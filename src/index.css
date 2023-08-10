@@ -1,0 +1,55 @@
+:root{
+  --base-color: #255899;
+  --dark-color: #153359;
+  --light-color: #bed2ed;
+}
+
+body, html, #root{
+  font-family: 'Nunito Sans', sans-serif;
+  min-height: 100vh;
+}
+
+
+.btn-outline-guia{
+  border: 1px solid var(--base-color) !important;
+  color: var(--base-color);
+  
+}
+
+.btn-outline-guia:hover{
+  cursor: default;
+  background-color: var(--base-color) !important;
+  color: white !important;
+}
+
+
+.navbar{
+  background-color: var(--light-color);
+}
+
+.navbar-brand{
+  color: var(--dark-color);
+}
+.navbar-brand:hover{
+  color: var(--dark-color)
+}
+
+@media (max-width: 312px) {
+  .navbar-brand{
+    font-size: 15px !important;
+  }
+}
+
+.nav-link{
+  color: rgb(70, 70, 70);
+  padding: 10px 5px;
+  transition-duration: .2s;
+}
+.nav-link:hover{
+  color: var(--base-color);
+}
+
+.active{
+  color: white !important;
+  background-color: var(--base-color);
+}
