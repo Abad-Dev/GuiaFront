@@ -27,8 +27,8 @@ function Rubros(){
             setNewSlug('')
             setNewImg('')
             postRubro(newRubro)
-            .then(res => res.json())
-            .then(data => setSaved(!saved))
+                .then(res => res.json())
+                .then(data => setSaved(!saved))
         console.log(newRubro)
         }
     }

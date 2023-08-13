@@ -22,4 +22,15 @@ function getSubRubros(){
     return fetch(apiUrl + '/sub-rubro')
 }
 
-export { getRubros, postRubro, getSubRubros };
+
+function postSubRubro(subRubro){
+    return fetch(apiUrl + '/sub-rubro', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(subRubro)
+    })
+}
+
+export { getRubros, postRubro, getSubRubros, postSubRubro };
