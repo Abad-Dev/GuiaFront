@@ -29,7 +29,6 @@ function Rubros(){
             postRubro(newRubro)
                 .then(res => res.json())
                 .then(data => setSaved(!saved))
-        console.log(newRubro)
         }
     }
     React.useEffect(() => {
@@ -78,7 +77,7 @@ function Rubros(){
             </div>}
             <div className="row mb-5">
                 <div className="col-12">
-                    <button className='btn btn-outline-guia' onClick={() => handleSave()}>Agregar</button>
+                    <button className='btn btn-outline-guia' onClick={() => handleSave()}>+ Agregar</button>
                 </div>
             </div>
             <div className="row">

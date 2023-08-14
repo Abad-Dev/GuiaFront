@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css';
+import { Distritos } from './routes/Distritos';
 import { Root } from './routes/Root';
 import { Rubros } from './routes/Rubros';
 import { SubRubros } from './routes/SubRubros';
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/sub-rubros",
         element: <SubRubros />
+      },
+      {
+        path: "/distritos",
+        element: <Distritos />
       }
     ]
   },

@@ -63,7 +63,6 @@ function SubRubros(){
             }
         }
     }
-    console.log(rubros)
 
     return(
         <div className="container py-5">
@@ -94,7 +93,7 @@ function SubRubros(){
                 {empty && <div className="alert alert-danger text-center" role="alert">
                     Los campos no pueden estar vacíos!
                     </div>}
-                    <button className='btn btn-outline-guia' onClick={() => handleSave()}>Agregar</button>
+                    <button className='btn btn-outline-guia' onClick={() => handleSave()}>+ Agregar</button>
                 </div>
             </div>
             
@@ -104,19 +103,25 @@ function SubRubros(){
                 </div>
             </div>
             <hr />
-            {rubros.map((rubro, index) => {return(
-            <div className="row mb-3" key={index}>
-                <div className="col-12">
-                    <p className='m-0'>{rubro.NAME}:</p>
-                </div>
+            {rubros.map((rubro, index) => {
 
-                {rubro.subRubros.map((subRubro, index) => {return(
-                    <div className="col-12" key={index}>
-                        <h5 className='m-0 ps-3'>- {subRubro.NAME}</h5>
+                if (JSON.stringify(rubro.subRubros) === '[]'){
+                    return
+                } else {
+                return(
+                <div className="row mb-3" key={index}>
+                    <div className="col-12">
+                        <p className='m-0'>{rubro.NAME}:</p>
                     </div>
-                )})}
-            </div>
-            )})}
+
+                    
+                    {rubro.subRubros.map((subRubro, index) => {return(
+                        <div className="col-12" key={index}>
+                            <h5 className='m-0 ps-3'>· {subRubro.NAME}</h5>
+                        </div>
+                    )})}
+                </div>
+                )}})}
             
         </div>
     )
