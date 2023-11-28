@@ -19,10 +19,14 @@ function Root(){
             slug: '/distritos'
         },
         {
+            title: 'Anunciantes',
+            slug: '/anunciantes'
+        },
+        {
             title: 'Más Opciones',
             slug: '/config'
         },
-    ]
+    ] // Luego de agregar una ruta hay que especificar el elemento en el main.jsx
     return(
         <>
             <nav className="navbar navbar-expand-lg p-0">

@@ -53,3 +53,30 @@ body, html, #root{
   color: white !important;
   background-color: var(--base-color);
 }
+
+
+.kw{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  margin: 5px 5px 5px 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.kw > button {
+  display: flex;
+  align-items: center;
+  margin: 3px;
+  padding: 0 4px 3px 4px;
+  border: 0;
+  border-radius: 5px;
+  background-color: transparent;
+  transition-duration: .2s;
+}
+
+.kw > button:hover{
+  background-color: indianred;
+  color: #FFF;
+}

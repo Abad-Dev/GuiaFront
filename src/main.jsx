@@ -9,6 +9,9 @@ import { Distritos } from './routes/Distritos';
 import { Root } from './routes/Root';
 import { Rubros } from './routes/Rubros';
 import { SubRubros } from './routes/SubRubros';
+import { Anunciantes } from './routes/Anunciantes';
+import { Config } from './routes/Config';
+import { Anunciante } from './routes/Single/Anunciante';
 
 
 const router = createBrowserRouter([
@@ -27,6 +30,18 @@ const router = createBrowserRouter([
       {
         path: "/distritos",
         element: <Distritos />
+      },
+      {
+        path: "/anunciantes",
+        element: <Anunciantes />
+      },
+      {
+        path: "/config",
+        element: <Config />
+      },// Singles:
+      {
+        path: "/anunciante/:id",
+        element: <Anunciante />
       }
     ]
   },

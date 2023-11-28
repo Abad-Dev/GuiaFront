@@ -93,7 +93,7 @@ function Distritos() {
                         )})}
                 </div>
                 <div className="col-12">
-                    <button className='btn btn-outline-guia' onClick={() => handleRelate()}>Guardar</button>
+                    <button className='btn btn-outline-guia' onClick={() => handleRelate()}>+ Agregar</button>
                 </div>
             </div>
         </div>

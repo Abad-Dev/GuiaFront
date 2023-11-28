@@ -117,7 +117,7 @@ function SubRubros(){
                     
                     {rubro.subRubros.map((subRubro, index) => {return(
                         <div className="col-12" key={index}>
-                            <h5 className='m-0 ps-3'>· {subRubro.NAME}</h5>
+                            <h5 className='m-0 ps-3 d-inline'>· {subRubro.NAME}</h5> <small className='d-inline'>({subRubro.SLUG})</small>
                         </div>
                     )})}
                 </div>

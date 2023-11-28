@@ -6,6 +6,10 @@ function getPartialAnunciantes(){
     return fetch(apiUrl + '/anunciante-noimg')
 }
 
+function getCompleteAnunciantes(){
+    return fetch(apiUrl + '/anunciante')
+}
+
 
 function getRubros(){
     return fetch(apiUrl + '/rubro-noimg')
@@ -35,6 +39,36 @@ function postSubRubro(subRubro){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(subRubro)
+    })
+}
+
+function getRelSubAnunciantes(){
+    return fetch(apiUrl + '/rel-sub-anunciantes')
+}
+
+function postRelSubAnunciantes(subRubroId, anuncianteId){
+    return fetch(apiUrl + '/rel-sub-anunciantes', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            fk1: subRubroId,
+            fk2: anuncianteId
+        })
+    })
+}
+
+function deleteRelSubAnunciante(subRubroId, anuncianteId){
+    return fetch(apiUrl + '/rel-sub-anunciantes', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            fk1: subRubroId,
+            fk2: anuncianteId
+        })
     })
 }
 
@@ -88,4 +122,103 @@ function deleteRelDistrito(distritoId, anuncianteId){
 }
 
 
-export { getPartialAnunciantes, getRubros, postRubro, getSubRubros, postSubRubro, getDistritos, postDistrito, getRelatesDistritos, relateDistrito, deleteRelDistrito };
+function getKeywords(){
+    return fetch(apiUrl + '/keyword')
+}
+
+
+function postKeyword(kw){
+    return fetch(apiUrl + '/keyword', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            word: kw
+        })
+    })
+}
+
+
+function getInvalidWords(){
+    return fetch(apiUrl + '/invalid-words')
+}
+
+
+function postInvalidWord(word){
+    return fetch(apiUrl + '/invalid-word', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            word: word
+        })
+    })
+}
+
+
+function getRelsSubKw(){
+    return fetch(apiUrl + '/rel-sub-kw')
+}
+
+
+function postRelSubKw(idSub, idKw){
+    return fetch(apiUrl + '/rel-sub-kw', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            fk1: idSub,
+            fk2: idKw
+        })
+    })
+}
+
+
+function deleteRelSubKw(idSub, idKw){
+    return fetch(apiUrl + '/rel-sub-kw', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            fk1: idSub,
+            fk2: idKw
+        })
+    })
+}
+
+
+// Single Functions
+
+function getAnuncianteById(anuncianteId){
+    return fetch(apiUrl + '/anunciante/'+anuncianteId)
+}
+
+export { 
+    getPartialAnunciantes, 
+    getCompleteAnunciantes,
+    getRubros, 
+    postRubro, 
+    getSubRubros, 
+    postSubRubro,
+    getRelSubAnunciantes,
+    postRelSubAnunciantes, 
+    deleteRelSubAnunciante,
+    getDistritos, 
+    postDistrito, 
+    getRelatesDistritos, 
+    relateDistrito, 
+    deleteRelDistrito,
+    getKeywords,
+    postKeyword,
+    getInvalidWords,
+    postInvalidWord,
+    getRelsSubKw,
+    postRelSubKw,
+    deleteRelSubKw,
+
+    getAnuncianteById
+};
